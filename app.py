@@ -7,7 +7,7 @@ from decimal import Decimal
 import uuid
 import random
 
-app = Flask(name)
+app = Flask(__name__)
 app.secret_key = 'your_secret_key_here'
 
 # AWS Setup using IAM Role
@@ -438,5 +438,5 @@ def cancel_booking():
     return redirect(url_for('dashboard'))
 
 
-if name == 'main':
+if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
